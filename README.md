@@ -1,6 +1,14 @@
 # microprofile-db-configsource
 
-Create the required database scheme by running the db script **create-table.sql** under resources folder
+Create the required database scheme by running the db script **create-table.sql** under resources folder.
+
+The above mentioned script will create the required table **ConfigProperty** and also insert a test config property for application (**test-app**) and profile (**QA**).
+
+We also need to tell the application and environment name on bootstrap to load the relevant properties from database. This can be done by defining config properties **application** and **profile** as:
+
+  1. Environment variables (**Highest precedence**)
+  2. JVM args
+  3. Inside microprofile-config.properties file (**Lowest precedence**)  
 
 Now run the following maven commands
 
@@ -25,7 +33,12 @@ The above command will start the payara micro server and also deploy **microprof
 Once the server starts we can access the endpoint as:
 ```
 http://<HOST>:8085/microprofile-db-configsource-1.0-SNAPSHOT/rest/api/test
+
+Response:
+
+test property value
 ```
 The value of **HOST** is logged in the command line when the payara micro server starts.
+
 
 Happy C0ding!! :)
