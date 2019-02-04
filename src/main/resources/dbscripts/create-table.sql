@@ -41,7 +41,7 @@ CREATE TABLE `configproperty` (
 --
 
 INSERT INTO `configproperty` (`id`, `application`, `configKey`, `configValue`, `isActive`, `label`, `profile`) VALUES
-(2, 'ke-user', 'test.property.key', 'test property value', b'1', NULL, 'QA');
+(1, 'test-app', 'test.property.key', 'test property value', b'1', NULL, 'QA');
 
 --
 -- Indexes for dumped tables
